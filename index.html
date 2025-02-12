@@ -3,156 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Derivesup Tick Analyzer</title>
+    <title>Maintenance Mode</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
-            padding: 0;
-            background-color: white;
-            color: #333;
+            height: 100vh;
+            background: linear-gradient(to bottom, #f9a8d4, #f0e68c);
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: white;
+            text-align: center;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            max-width: 700px;
+            width: 100%;
             color: #333;
         }
 
-        .header {
-            font-size: 2rem;
-            font-weight: bold;
-            color: red;
+        h1 {
+            font-size: 40px;
+            color: #ff6f61;
             margin-bottom: 20px;
         }
 
-        .login-form {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            border: 1px solid red;
-            border-radius: 10px;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            color: #555;
         }
 
-        .login-form input {
-            width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+        .message {
+            font-size: 18px;
+            color: #666;
+            margin-top: 20px;
         }
 
-        .login-form button {
-            width: 100%;
-            padding: 10px;
-            background-color: red;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-        }
-
-        .login-form button:hover {
-            background-color: darkred;
-        }
-
-        .error {
-            color: red;
-            margin-top: 10px;
-            display: none;
+        .icon {
+            font-size: 50px;
+            color: #ff6f61;
+            margin-bottom: 20px;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">Derivesup Tick Analyzer</div>
-        <form class="login-form" onsubmit="return validateLogin(event)">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
-            <button type="submit">Login</button>
-            <div class="error" id="error-message">Invalid username or password</div>
-        </form>
+        <div class="icon">🛠️</div>
+        <h1>We Are Currently Under Maintenance</h1>
+        <p>Our website is temporarily unavailable as we perform essential updates. We apologize for any inconvenience.</p>
+        <div class="message">
+            <p>We'll be back shortly! Thank you for your understanding.</p>
+        </div>
     </div>
-
-    <script>
-        // List of valid users, passwords, and their unique URLs
-        const users = [
-            { username: 'mahindaliyanage44@gmail.com', password: 'FA87023@#ap', url: 'https://gfcjfj.site/' },
-            { username: '1014pradeep@gmail.com', password: 'AH75$BKa', url: 'https://gfcjfj.site/' },
-            { username: 'v.a.p.kit.show@gmail.com', password: 'AH75$BKa', url: 'https://gfcjfj.site/' },
-            { username: 'nadeesha12pigera@gmail.com', password: 'AH75$BKa', url: 'https://gfcjfj.site/' },
-            { username: 'Haseefmashfaq@gmail.com', password: 'AH75$BKa', url: 'https://gfcjfj.site/' },
-            { username: 'miprabash4@gmail.com', password: 'LH5399&@', url: 'https://gfcjfj.site/' },
-            { username: 'tharusha.sandeepta@gmail.com', password: 'LH5399&@', url: 'https://gfcjfj.site/' },
-            { username: 'Dinesh.marvelestates@gmail.com', password: 'LH5399&@', url: 'https://gfcjfj.site/ ' },
-            { username: 'asiridushmantha89@gmail.com', password: 'LH5399&@', url: 'https://gfcjfj.site/ ' },
-            { username: 'charithrullz993@gmail.com', password: 'LH5399&@', url: ' http://analyzertool.site/' },
-            { username: 'prabahaniherath@gmail.com', password: 'LH5399&@', url: ' https://gfcjfj.site/' },
-            { username: 'dilshan.fdo12@gmail.com', password: 'LH5399&@', url: 'http://analyzertool.site/ ' },
-            { username: 'bryanperera2003@gmail.com', password: 'LH5399&@', url: ' http://analyzertool.site/' },
-            { username: 'prabathpasindu291@gmail.com', password: 'GF546@$qHj', url: 'https://gfcjfj.site/' },
-            { username: 'ravishanaka1991@gmail.com', password: 'GF546@$qHj', url: ' http://analyzertool.site/' },
-            { username: 'nipun.codeartix@gmail.com', password: 'GF546@$qHj', url: ' http://analyzertool.site/' },
-            { username: 'ravindu.ediriweera@gmail.com', password: 'GF546@$qHj', url: ' http://analyzertool.site/' },
-            { username: 'Sithararanasinha2nd@gmail.com', password: 'GF546@$qHj', url: ' http://analyzertool.site/' },
-            { username: 'ishararuchiranga.aht@gmail.com', password: 'LH5399&@', url: 'http://analyzertool.site/ ' },
-            { username: 'mvnmadushan@gmail.com', password: 'LH5399&@', url: 'http://analyzertool.site/ ' },
-            { username: 'hsamankumara295@gmail.com', password: 'LH5399&@', url: 'http://analyzertool.site/ ' },
-            { username: 'lakmalkmuk@gmail.com', password: 'FG622H@$', url: ' http://analyzertool.site/' },
-            { username: 'hsamankumara295@gmail.com', password: 'FG622H@$', url: 'http://analyzertool.site/ ' },
-            { username: 'tharukarodrigo0@gmail.com', password: 'FG622H@$', url: 'http://analyzertool.site/ ' },
-            { username: 'Kuma', password: '1234', url: ' http://analyzertool.site/' },
-            { username: 'scorpio.stingz@gmail.com', password: 'AH75$BKa', url: ' http://analyzertool.site/' },
-            { username: 'aashikazmil405@gmail.com', password: 'AH75$BKa', url: ' https://gfcjfj.site/' },
-            { username: 'Lasidealwis@gmail.com', password: 'AH75$BKa', url: 'http://analyzertool.site/ ' },
-            { username: 'ashantrd920@gmail.com', password: 'ADR67#@1', url: 'http://analyzertool.site/ ' },
-            { username: 'shenalwijesinghe1992@gmail.com', password: 'LH5399&@', url: ' http://analyzertool.site/' },
-            { username: 'hiroshanjayawardhana@gmail.com', password: 'AQM628$@', url: ' http://analyzertool.site/' },
-            { username: 'danushka75007500@gmail.com', password: 'ZQ802$@1', url: 'http://analyzertool.site/ ' },
-            { username: 'neville.kariya1984@gmail.com', password: 'DRY843!@', url: ' https://gfcjfj.site/' },
-            { username: 'eprashantha93@gmail.com', password: 'AL671@$7', url: 'http://analyzertool.site/ ' },
-            { username: 'rsandamal0@gmail.com', password: 'AL671@$7', url: ' http://analyzertool.site/' },
-            { username: 'kavindapeiris1996@gmail.com', password: 'Ad67B67@', url: 'https://gfcjfj.site/ ' },
-            { username: 'roshanchanaka880@gmail.com', password: 'GF546@$qHj', url: 'http://analyzertool.site/ ' },
-            { username: 'yellowmalee@gmail.com', password: 'GF546@$qHj', url: ' http://analyzertool.site/' },
-            { username: 'lochanars@gmail.com', password: 'Ad635@Hg', url: ' http://analyzertool.site/' },
-            { username: 'mahindaliyanage44@gmail.com', password: 'FA87023@#ap', url: 'https://gfcjfj.site/ ' },
-            { username: 'geantslook@gmail.com', password: 'Ad635@Hg', url: ' http://analyzertool.site/' },
-            { username: 'Nuwa', password: '1234', url: ' http://analyzertool.site/' },
-            { username: 'bkamalsiri@gmail.com', password: 'GF546@$qHj', url: 'http://analyzertool.site/ ' },
-            { username: 'sajithmanawadu93@gmail.com', password: 'LGF4673@d', url: ' http://analyzertool.site/' },
-            { username: 'nayanatharanga121@gmail.com', password: 'LGF4673@d', url: 'http://analyzertool.site/ ' },
-            { username: 'pasidumadushan1998@icloud.com', password: 'GYD547@e', url: 'http://analyzertool.site/ ' },
-            { username: 'Udarab71@gmail.com', password: 'LGF4673@d', url: ' http://analyzertool.site/' },
-            { username: 'ranishkaprasath3@gmail.com', password: 'D@&AJ754', url: 'https://gfcjfj.site/ ' },
-            { username: 'sharshana1990@gmail.com', password: 'FA87023@#ap', url: 'http://analyzertool.site/ ' }
-        ];
-
-        function validateLogin(event) {
-            event.preventDefault();
-
-            const username = document.getElementById('username').value;
-            const password = document.getElementById('password').value;
-            const errorMessage = document.getElementById('error-message');
-
-            // Check if the entered username and password match any in the list
-            const validUser = users.find(user => user.username === username && user.password === password);
-
-            if (validUser) {
-                // Redirect to the unique URL for that user
-                window.location.href = validUser.url;
-            } else {
-                errorMessage.style.display = 'block';
-            }
-        }
-    </script>
 </body>
 </html>
